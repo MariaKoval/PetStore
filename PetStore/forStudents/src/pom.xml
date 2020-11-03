@@ -5,38 +5,57 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Project_for_Jenkin</artifactId>
+    <artifactId>EmailTests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>jmeter-tests</id>
-                        <goals>
-                            <goal>jmeter</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>configuration</id>
-                        <goals>
-                            <goal>configure</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <testResultsTimestamp>false</testResultsTimestamp>
-                    <propertiesUser>
-                        <Threadcount>${Threadcount}</Threadcount>
-                        <Loopcount>${Loopcount}</Loopcount>
-                        <Rampup>${RampUp}</Rampup>
-                    </propertiesUser>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <properties>
+        <selenium-java.version>3.14.0</selenium-java.version>
+        <selenium-server.version>3.14.0</selenium-server.version>
+        <lombok.version>1.18.12</lombok.version>
+        <junit.version>5.5.2</junit.version>
+        <webdrivermanager.version>3.7.1</webdrivermanager.version>
+        <log4j-core.version>2.8.2</log4j-core.version>
+        <log4j-api.version>2.8.2</log4j-api.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>${selenium-server.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
 </project>
